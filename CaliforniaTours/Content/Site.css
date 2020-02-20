@@ -1,0 +1,186 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.container {
+    background-color: #ff6f69;
+}
+h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    color: #fbbe4f;
+}
+.title {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    color: #ff6f69;
+}
+.content {
+    background-color: #d1efe1;
+    border-radius: 10px 10px;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.specific-row {
+    background-color: #96ceb4;
+    text-align: center;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius:10px;
+}
+.main-row {
+    background-color: #ff6f69;
+    margin-top: 2em;
+    padding: 1em;
+    border-radius: 10px;
+    padding-left: 14em;
+}
+.main-row span {
+    padding-left: 2.5em;
+    padding-right: 1.5em;
+}
+.specific-row a {
+    margin-right: 3.5em;
+    margin-left: 4.5em;
+    color: black;
+    font-weight: bold;
+}
+.specific-row-park {
+    background-color: #96ceb4;
+    padding-left: 25em;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom:1em;
+    border-radius: 10px;
+}
+
+.main-row-park {
+    background-color: #ff6f69;
+    margin-top: 2em;
+    padding: 1em;
+    border-radius: 10px;
+    padding-left: 22em;
+}
+
+.main-row-park span {
+    padding-left: 2.5em;
+    padding-right: 2em;
+}
+
+.specific-row-park a {
+    margin-right: 3.5em;
+    color: black;
+    font-weight: bold;
+}
+.main-row-guest {
+    background-color: #ff6f69;
+    margin-top: 2em;
+    padding: 1em;
+    border-radius: 10px;
+    padding-left: 26em;
+}
+.content a:hover {
+    color: white;
+}
+
+.button {
+    background-color: #ffcc5c;
+    color: black;
+    padding: 0.5em;
+    margin-left: 10px;
+    border-radius: 10px 10px;
+    border: none;
+}
+.other_button {
+    background-color: #64a386;
+    color: black;
+    padding: 0.5em;
+    margin-left: 10px;
+    border-radius: 10px 10px;
+    border: none;
+}
+.o_btn {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.updel {
+    margin-top: 1em;
+    text-align: right;
+}
+
+.name {
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    padding: 1em;
+}
+.list a:first-child, .park_name {
+    color:black;
+    font-weight:bold;
+}
+.list a:last-child {
+    color: #ff6f69;
+    font-weight:bold;
+}
+.p_input {
+    text-transform: capitalize;
+}
+
+.showinfo {
+    background-color: #96ceb4;
+    text-align: center;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+    margin-right:20em;
+    margin-left:20em;
+}
+.add_guest {
+    padding:1.5em;
+}
+    .petform input, #SpeciesID, #PetNotes {
+        margin-top: 0.5em;
+    }
+
+.delbuttons {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: #ffcc5c;
+    color: black;
+    padding: 0.5em;
+    margin-left: 10px;
+    border-radius: 10px 10px;
+    border: none;
+}
+.confirm_deletebtn{
+    text-align:center;
+}
+.searchbar {
+    text-align: right;
+}

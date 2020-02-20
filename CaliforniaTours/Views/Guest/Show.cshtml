@@ -1,0 +1,31 @@
+﻿@model CaliforniaTours.Models.ViewModels.ShowGuest
+
+@{
+    ViewBag.Title = "Show";
+}
+<div class="content">
+    <h2 class="title">Show Guest</h2>
+    <a href="/Guest/List" class="button">Back to List</a>
+
+    <div class="showinfo">
+        <div class="name">First Name : <span class="p_input">@Model.guest.FirstName</span></div>
+        <div class="name">LastName : <span class="p_input">@Model.guest.LastName</span></div>
+        <div class="name">Email : <span class="p_input">@Model.guest.Email</span></div>
+        <div class="name">Phone Number : <span class="p_input">@Model.guest.PhoneNumber</span></div>
+        <div class="name">Bookings:</div>
+        <!-- Here we show the bookings where this guest is on -->
+        @{
+            foreach (var booking in @Model.Bookings)
+            {
+                <div class="list">
+                    <a href="/TourBooking/Show/@booking.BookingID">@booking.BookingID | @booking.Park.ParkName | @booking.Date.ToString("MM/dd/yyyy")</a>
+                </div>
+            }
+        }
+    </div>
+
+</div>
+<div class="updel">
+    <a href="/Guest/Update/@Model.guest.GuestID" class="button">Update</a>
+    <a href="/Guest/Delete/@Model.guest.GuestID" class="button">Delete</a>
+</div>

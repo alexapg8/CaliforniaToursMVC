@@ -1,0 +1,32 @@
+﻿@model List<CaliforniaTours.Models.Guest>
+
+@{
+    ViewBag.Title = "List";
+}
+    <div class="content">
+        <h2 class="title">List of Guests</h2>
+        <a href="/Guest/Add" class="button">Add New Guest</a>
+        <div class="o_btn">
+            <a href="/TourBooking/List" class="other_button">Go to Bookings</a>
+            <a href="/Park/List" class="other_button">Go to Parks</a>
+        </div>
+        <!-- We create a search bar for the admin to look for a guest -->
+        <form action="/Guest/List" method="GET" class="searchbar">
+            <input type="text" name="guestsearch" id="guestsearch" />
+            <input type="submit" value="Search" class="button" />
+        </form>
+        <div class="main-row-guest">
+            <span class="name">Name</span>
+        </div>
+        @{
+            foreach (var Guest in Model)
+            {
+                <div class="specific-row">
+                    <a href="/Guest/Show/@Guest.GuestID">@Guest.FirstName @Guest.LastName</a>
+                    <a href="/Guest/Update/@Guest.GuestID">Update</a>
+                    <a href="/Guest/Delete/@Guest.GuestID">Delete</a>
+                </div>
+            }
+        }
+
+    </div>

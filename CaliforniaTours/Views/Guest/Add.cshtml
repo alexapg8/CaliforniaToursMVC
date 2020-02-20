@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+<div class="content">
+    <h2 class="title">Add a New Guest</h2>
+    <a href="/Guest/List" class="button">Back to List</a>
+    <div class="showinfo">
+        <form method="POST" action="/Guest/Add">
+            <div class="name">First Name: </div><input id="FirstName" type="text" name="FirstName" />
+            <div class="name">Last Name: </div><input id="LastName" type="text" name="LastName" />
+            <div class="name">Email: </div><input id="Email" type="text" name="Email" placeholder="email@email.com" />
+            <div class="name">Phone Number: </div><input id="PhoneNumber" type="text" name="PhoneNumber" placeholder="000-000-0000" />
+            <div>
+                <input type="submit" value="Add Guest" class="delbuttons">
+            </div>
+        </form>
+    </div>
+</div>

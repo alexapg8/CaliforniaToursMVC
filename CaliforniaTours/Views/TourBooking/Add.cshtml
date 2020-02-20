@@ -1,0 +1,29 @@
+﻿@model CaliforniaTours.Models.ViewModels.AddParkGuest
+
+@{
+    ViewBag.Title = "Add";
+}
+<div class="content">
+    <h2 class="title">Add a New Booking</h2>
+    <a href="/TourBooking/List" class="button">Back to List</a>
+    <div class="showinfo">
+        <form method="POST" action="/TourBooking/Add">
+            <div class="name">Park : </div>
+            <select id="BookingParkID" type="text" name="ParkID">
+                @{
+
+                    foreach (var park in Model.Parks)
+                    {
+                        <option value="@park.ParkID">@park.ParkName</option>
+
+                    }
+                }
+            </select>
+            <div class="name">Date : </div><input id="Date" type="text" name="Date" placeholder="mm-dd-yyyy" />
+            <div class="name">Cost : </div><input id="Cost" type="text" name="Cost" placeholder="200" /> USD
+            <div>
+                <input type="submit" value="Add Booking" class="delbuttons">
+            </div>
+        </form>
+    </div>
+</div>

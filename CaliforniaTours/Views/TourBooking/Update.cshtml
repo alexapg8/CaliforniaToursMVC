@@ -1,0 +1,52 @@
+﻿@model CaliforniaTours.Models.ViewModels.AddParkGuest
+
+@{
+    ViewBag.Title = "Update";
+}
+<div class="content">
+    <h2 class="title">Update Booking</h2>
+    <a href="/TourBooking/List" class="button">Back to List</a>
+    <div class="showinfo">
+        <form action="/TourBooking/Update/@Model.Booking.BookingID" method="POST">
+            <div class="name">Guest : </div>
+            <select id="GuestID" type="text" name="GuestID">
+                @{
+
+                    foreach (var guest in Model.Guests)
+                    {
+                        var selected = "";
+                        if (Model.Booking.GuestID == guest.GuestID)
+                        {
+                            selected = "selected";
+                        }
+                      
+                        <option value="@guest.GuestID" @selected>@guest.FirstName</option>
+
+                    }
+                }
+            </select>
+            <div class="name">Park : </div>
+            <select id="ParkID" type="text" name="ParkID">
+                @{
+
+                    foreach (var park in Model.Parks)
+                    {
+                        var selected = "";
+                         if (Model.Booking.ParkID == park.ParkID)
+                        {
+                            selected = "selected";
+                        }
+                        <option value="@park.ParkID" @selected>@park.ParkName</option>
+
+                    }
+                }
+            </select>
+            <div class="name">Date : </div><input id="Date" type="text" name="Date" value="@Model.Booking.Date" />
+            <div class="name">Cost : </div><input id="Cost" type="text" name="Cost" value="@Model.Booking.Cost" /> USD
+        
+            <div>
+                <input type="submit" value="Update Booking" class="delbuttons" />
+            </div>
+        </form>
+    </div>
+</div>

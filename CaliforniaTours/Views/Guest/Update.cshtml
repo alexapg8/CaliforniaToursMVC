@@ -1,0 +1,20 @@
+﻿@model CaliforniaTours.Models.Guest
+
+@{
+    ViewBag.Title = "Update";
+}
+<div class="content">
+    <h2 class="title">Update Guest</h2>
+    <a href="/Guest/List" class="button">Back to List</a>
+    <div class="showinfo">
+        <form action="/Guest/Update/@Model.GuestID" method="POST">
+            <div class="name">First Name: </div><input id="FirstName" type="text" name="FirstName" value="@Model.FirstName" />
+            <div class="name">Last Name: </div><input id="LastName" type="text" name="LastName" value="@Model.LastName" />
+            <div class="name">Email: </div><input id="Email" type="text" name="Email" value="@Model.Email" />
+            <div class="name">Phone Number: </div><input id="PhoneNumber" type="text" name="PhoneNumber" value="@Model.PhoneNumber" />
+            <div>
+                <input type="submit" value="Update Guest" class="delbuttons" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@model CaliforniaTours.Models.Park
+
+@{
+    ViewBag.Title = "Update";
+}
+<div class="content">
+    <h2 class="title">Update Park</h2>
+    <a href="/Park/List" class="button">Back to List</a>
+    <div class="showinfo">
+        <form action="/Park/Update/@Model.ParkID" method="POST">
+            <div class="name">Name: </div><input id="ParkName" type="text" name="ParkName" value="@Model.ParkName" />
+            <div class="name">Departure Time : </div><input id="DepartureTime" type="text" name="DepartureTime" value="@Model.DepartureTime" />
+            <div class="name">Returning Time : </div><input id="ReturningTime" type="text" name="ReturningTime" value="@Model.ReturningTime" />
+            <div>
+                <input type="submit" value="Update Park" class="delbuttons" />
+            </div>
+        </form>
+    </div>
+</div>

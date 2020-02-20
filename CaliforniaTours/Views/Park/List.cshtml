@@ -1,0 +1,34 @@
+﻿@model List<CaliforniaTours.Models.Park>
+
+@{
+    ViewBag.Title = "List";
+}
+    <div class="content">
+        <h2 class="title">List of Parks</h2>
+        <a href="/Park/Add" class="button">Add New Park</a>
+        <div class="o_btn">
+            <a href="/TourBooking/List" class="other_button">Go to Bookings</a>
+            <a href="/Guest/List" class="other_button">Go to Guests</a>
+        </div>
+        <!-- We create a search bar for the user to use if they already have a park in mind -->
+        <form action="/Park/List" method="GET" class="searchbar">
+            <input type="text" name="parksearch" id="parksearch" />
+            <input type="submit" value="Search" class="button" />
+        </form>
+        <div class="main-row-park">
+            <span class="name">ID</span>
+            <span class="name">Name</span>
+        </div>
+        @{
+            foreach (var Park in Model)
+            {
+                <div class="specific-row-park">
+                    <a href="/Park/Show/@Park.ParkID">@Park.ParkID</a>
+                    <a href="/Park/Show/@Park.ParkID">@Park.ParkName</a>
+                    <a href="/Park/Update/@Park.ParkID">Update</a>
+                    <a href="/Park/Delete/@Park.ParkID">Delete</a>
+                </div>
+            }
+        }
+
+    </div>

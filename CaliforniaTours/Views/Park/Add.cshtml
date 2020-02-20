@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+<div class="content">
+    <h2 class="title">Add a New Park</h2>
+    <a href="/Park/List" class="button">Back to List</a>
+    <div class="showinfo">
+        <form method="POST" action="/Park/Add">
+            <div class="name">Name: </div><input id="ParkName" type="text" name="ParkName" />
+            <div class="name">Departing Time : </div><input id="DepartureTime" type="text" name="DepartureTime" placeholder="08:00 AM" />
+            <div class="name">Returning Time : </div><input id="ReturningTime" type="text" name="ReturningTime" placeholder="10:00 PM" />
+            <div>
+                <input type="submit" value="Add Park" class="delbuttons">
+            </div>
+        </form>
+    </div>
+</div>

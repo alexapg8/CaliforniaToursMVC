@@ -1,0 +1,32 @@
+﻿@model List<CaliforniaTours.Models.TourBooking>
+
+
+@{
+    ViewBag.Title = "List";
+}
+    <div class="content">
+        <h2 class="title">List of Bookings</h2>
+        <a href="/TourBooking/Add" class="button">Add New Booking</a>
+        <div class="o_btn">
+            <a href="/Guest/List" class="other_button">Go to Guests</a>
+            <a href="/Park/List" class="other_button">Go to Parks</a>
+        </div>
+        <div class="main-row">
+            <span class="name">Booking ID</span>
+            <span class="name">Park ID</span>
+            <span class="name">Date</span>
+        </div>
+        @{
+            foreach (var TourBooking in Model)
+            {
+                <div class="specific-row">
+                    <a href="/TourBooking/Show/@TourBooking.BookingID">@TourBooking.BookingID</a>
+                    <a href="/TourBooking/Show/@TourBooking.BookingID">@TourBooking.ParkID</a>
+                    <a href="/TourBooking/Show/@TourBooking.BookingID">@TourBooking.Date.ToString("MM/dd/yyyy")</a>
+                    <a href="/TourBooking/Update/@TourBooking.BookingID">Update</a>
+                    <a href="/TourBooking/Delete/@TourBooking.BookingID">Delete</a>
+                </div>
+            }
+        }
+
+    </div>

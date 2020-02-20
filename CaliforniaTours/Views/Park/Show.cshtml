@@ -1,0 +1,31 @@
+﻿@model CaliforniaTours.Models.ViewModels.ShowPark
+
+@{
+    ViewBag.Title = "Show";
+}
+    <div class="content">
+        <h2 class="title">Show Park</h2>
+        <a href="/Park/List" class="button">Back to List</a>
+
+        <div class="showinfo">
+            <div class="name">ID : <span class="p_input">@Model.park.ParkID</span></div>
+            <div class="name">Name : <span class="p_input">@Model.park.ParkName</span></div>
+            <div class="name">Departure Time : <span class="p_input">@Model.park.DepartureTime</span></div>
+            <div class="name">Returning Time : <span class="p_input">@Model.park.ReturningTime</span></div>
+            <!-- Here we show the bookings where this park is on -->
+            <div class="name">Bookings:</div>
+            @{
+                foreach (var booking in @Model.Bookings)
+                {
+                    <div class="list">
+                        <a href="/TourBooking/Show/@booking.BookingID">Booking ID: @booking.BookingID  | Date: @booking.Date.ToString("MM/dd/yyyy")</a>
+                    </div>
+                }
+            }
+        </div>
+        
+        <div class="updel">
+            <a href="/Park/Update/@Model.park.ParkID" class="button">Update</a>
+            <a href="/Park/Delete/@Model.park.ParkID" class="button">Delete</a>
+        </div>
+    </div>

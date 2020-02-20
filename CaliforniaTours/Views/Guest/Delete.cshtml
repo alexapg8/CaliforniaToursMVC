@@ -1,0 +1,13 @@
+﻿@model CaliforniaTours.Models.Guest
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="content">
+    <!-- Confirmation page to confirm delete of guest -->
+    <h2 class="title">Are you sure you want to delete <span class="delname">@Model.FirstName</span>  <span class="delname">@Model.LastName</span>?</h2>
+    <div class="confirm_deletebtn">
+        <a href="/Guest/DeleteF/@Model.GuestID" class="delbuttons">Confirm</a>
+        <a href="/Guest/List" class="delbuttons">Back to List</a>
+    </div>
+</div>

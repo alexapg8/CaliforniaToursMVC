@@ -1,0 +1,56 @@
+﻿@model CaliforniaTours.Models.ViewModels.AddParkGuest
+
+@{
+    ViewBag.Title = "Show";
+}
+<div class="content">
+    <h2 class="title">Show Booking</h2>
+    <a href="/TourBooking/List" class="button">Back to List</a>
+
+    <div class="showinfo">
+        <div class="name">Booking ID : <span class="p_input">@Model.Booking.BookingID</span></div>
+        <div class="name">Guests :  </div>
+        @{
+            <!-- Here we show the guests that are on this booking -->
+            foreach (var guest in @Model.Guests)
+            {
+                <div class="list">
+                    <a href="/Guest/Show/@guest.GuestID" >@guest.FirstName  @guest.LastName</a>
+                    @{
+
+                    }
+                    <a href="/TourBooking/DeleteGuest/@Model.Booking.BookingID?GuestID=@guest.GuestID">
+                        Remove Guest
+                    </a>
+                </div>
+            }
+
+        }
+    <div class="add_guest">
+        <form method="post" action="/TourBooking/AddGuest/@Model.Booking.BookingID">
+            <select name="GuestID" id="GuestID">
+                @{
+                    //We give the option to add another guest to the booking
+
+                    foreach (var guest in Model.Add_Guest)
+                    {
+                        <option value="@guest.GuestID">
+                            @guest.FirstName @guest.LastName
+                        </option>
+                    }
+                }
+            </select>
+            <input type="submit" class="button" value="Add Guest" />
+        </form>
+    </div>
+        <div class="name">Park : <span class="p_input"><a href="/Park/Show/@Model.Booking.Park.ParkID" class="park_name">@Model.Booking.Park.ParkName</a></span></div>
+        <div class="name">Date : <span class="p_input">@Model.Booking.Date.ToString("MM/dd/yyyy")</span></div>
+        <div class="name">Cost : <span class="p_input">@Model.Booking.Cost</span> USD</div>
+
+
+    </div>
+    <div class="updel">
+        <a href="/TourBooking/Update/@Model.Booking.BookingID" class="button">Update</a>
+        <a href="/TourBooking/Delete/@Model.Booking.BookingID" class="button">Delete</a>
+    </div>
+</div>

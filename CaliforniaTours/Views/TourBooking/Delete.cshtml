@@ -1,0 +1,13 @@
+﻿@model CaliforniaTours.Models.TourBooking
+
+@{
+    ViewBag.Title = "Delete";
+}
+    <div class="content">
+        <!-- Confirmation page to confirm delete of booking -->
+        <h2 class="title">Are you sure you want to delete Booking # <span class="delname">@Model.BookingID</span> ?</h2>
+        <div class="confirm_deletebtn">
+            <a href="/TourBooking/DeleteF/@Model.BookingID" class="delbuttons">Confirm</a>
+            <a href="/TourBooking/List" class="delbuttons">Back to List</a>
+        </div>
+    </div>

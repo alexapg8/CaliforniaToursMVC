@@ -1,0 +1,13 @@
+﻿@model CaliforniaTours.Models.Park
+
+@{
+    ViewBag.Title = "Delete";
+}
+    <div class="content">
+        <!-- Confirmation page to confirm delete of park -->
+        <h2 class="title">Are you sure you want to delete <span class="delname">@Model.ParkName</span> ?</h2>
+        <div class="confirm_deletebtn">
+            <a href="/Park/DeleteF/@Model.ParkID" class="delbuttons">Confirm</a>
+            <a href="/Park/List" class="delbuttons">Back to List</a>
+        </div>
+    </div>
